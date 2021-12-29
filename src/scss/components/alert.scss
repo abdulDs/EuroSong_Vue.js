@@ -1,0 +1,57 @@
+// default
+@mixin alertDefault() {
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+@mixin alertColor($red, $green, $blue) {
+    background-color: rgba($red, $green, $blue , 0.75);
+    border: 1px solid rgba($red, $green, $blue, 1);
+}
+
+.c-alert {
+    @include alertDefault();
+    @include alertColor(255, 0, 0);
+
+    &.warning {
+        @include alertColor(255, 125, 0);
+    }
+
+    &.succes {
+        @include alertColor(0, 255, 0);
+    }
+
+    &.neutral {
+        @include alertColor(200, 200, 200);
+    }
+}
+
+// // default
+// %alert-default {
+//     padding: 20px;
+//     margin-bottom: 10px;
+//     border-radius: 20px;
+// }
+
+
+// .c-alert {
+//     @extend %alert-default;
+
+//     background-color: rgba(255, 0, 0 , 0.75);
+//     border: 1px solid rgba(255, 0, 0, 1);
+// }
+
+// .c-alert.warning {
+//     @extend %alert-default;
+
+//     background-color: rgba(255, 125, 0, 0.75);
+//     border: 1px solid rgba(255, 125, 0, 1);
+// }
+
+// .c-alert.succes {
+//     @extend %alert-default;
+
+//     background-color: rgba(0, 255, 0, 0.75);
+//     border: 1px solid rgba(0, 255, 0, 1);
+// }
